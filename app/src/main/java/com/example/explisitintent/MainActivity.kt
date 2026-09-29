@@ -21,9 +21,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         var _btnExplisit1 = findViewById<Button>(R.id.btnExplisit1)
-
         val _dataKirim = findViewById<EditText>(R.id.dataKirim)
         val _btnExplisit2 = findViewById<Button>(R.id.btnexplisit2)
+        val isiPegawai = Pegawai(
+            1,"Solman","Data Analyst"
+        )
+        val _btnExplisit3 = findViewById<Button>(R.id.btnExplisit3)
 
         _btnExplisit1.setOnClickListener {
             val intent = Intent(
@@ -39,6 +42,16 @@ class MainActivity : AppCompatActivity() {
                 MainActivity3::class.java
             ).apply {
                 putExtra(MainActivity3.dataTerima,_dataKirim.text.toString())
+            }
+            startActivity(intentWithData)
+        }
+
+        _btnExplisit3.setOnClickListener {
+            val intentWithData = Intent(
+            this@MainActivity,
+            MainActivity4::class.java
+            ).apply {
+                putExtra(MainActivity4.dataPegawai,isiPegawai)
             }
             startActivity(intentWithData)
         }
