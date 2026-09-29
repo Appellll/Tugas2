@@ -23,9 +23,10 @@ class MainActivity : AppCompatActivity() {
         var _btnExplisit1 = findViewById<Button>(R.id.btnExplisit1)
         val _dataKirim = findViewById<EditText>(R.id.dataKirim)
         val _btnExplisit2 = findViewById<Button>(R.id.btnexplisit2)
-        val isiPegawai = Pegawai(
-            1,"Solman","Data Analyst"
-        )
+
+        val isiPegawai : ArrayList<Pegawai> = arrayListOf()
+        isiPegawai.add(Pegawai(1,"Anita","Test"))
+        isiPegawai.add(Pegawai(2,"Tatik","Marketing"))
         val _btnExplisit3 = findViewById<Button>(R.id.btnExplisit3)
 
         _btnExplisit1.setOnClickListener {

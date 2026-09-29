@@ -17,13 +17,17 @@ class MainActivity4 : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val intentPegawai = intent.getParcelableExtra<Pegawai>(
+        val intentPegawai = intent.getParcelableArrayListExtra<Pegawai>(
             dataPegawai,
             Pegawai::class.java
         )
-        val isiText = "NIP : ${intentPegawai?.NIP.toString()}, "+
-                "\nNama : ${intentPegawai?.Nama.toString()}, "+
-                "\nDept : ${intentPegawai?.Dept.toString()}"
+        val isiText = "NIP : ${intentPegawai!![0].NIP.toString()}, "+
+                "\nNama : ${intentPegawai[0].Nama.toString()}, "+
+                "\nDept : ${intentPegawai[0].Dept.toString()}" +
+                "\n" +
+                "\nNIP : ${intentPegawai[1]?.NIP.toString()}, "+
+                "\nNama : ${intentPegawai[1]?.Nama.toString()}, "+
+                "\nDept : ${intentPegawai[1]?.Dept.toString()}"
         val _showDataPegawai = findViewById<TextView>(R.id.showDataPegawai)
         _showDataPegawai.text = isiText
     }
